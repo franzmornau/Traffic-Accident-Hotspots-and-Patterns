@@ -38,5 +38,7 @@ For later use:
 
 **3.** State a hypothesis about the distribution over the weeks in a year, and test it$
 
+![Accidents by week](week_count_2015.png)
+
 
 
