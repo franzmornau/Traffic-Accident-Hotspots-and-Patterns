@@ -42,3 +42,10 @@ For later use:
 
 
 
+# Conclusion and next steps
+
+- The Collision data timeline follows some clear patterns, even in a city with little weather variations (no ice/snow)
+- Zooming into a timeline brings pattern to light that are not easy to see on first glance (in this case they were easy to guess by knowing the subject). Also: digging deep into one dataset might get farther than merging.
+Advice to self: don’t get impatient …
+- Let's to continue and find spatial patterns! (steps 2/3)
+
