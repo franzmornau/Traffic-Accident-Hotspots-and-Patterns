@@ -1,6 +1,6 @@
-# **Traffic Accident Patterns in Seattle **
+# Traffic Accident Patterns in Seattle
 
-### ** Extending a project by Gulom Saidov**
+### *Extending a project by Gulom Saidov*
 
 The city of Seattle publicly provides comprehensive data on traffic, collisions, streets & thier conditions and more. In a first step we dig into timline patterns in the collision data. Further steps will look into accident hotspots in the city and their development over time.
 
