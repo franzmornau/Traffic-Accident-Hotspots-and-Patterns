@@ -1,31 +1,42 @@
-# **TRAFFIC ACCIDENTS**
+# **Traffic Accident Patterns in Seattle **
 
-Car accidents cause a lot of injuries and death. Data science can be used for good, and finding out why and how car acciden$
+### ** Extending a project by Gulom Saidov**
 
-# **Project Goal:**
-
-Predict the number of accidents for the road segments of Seattle City using road features such as geolocation, surface widt$
-
-Finding out possible causes of accidents will have a number of applications:
-
-# **APPLICATIONS:**
-
-Commuters make a daily safe route planning, emergency vehicles will be evenly allocated, cities will better design risky ro$
-
-
-# **DATA**
-
-In this project, three data sets are used: traffic volume data of the road segments(2016), road network data, traffic accid$
+The city of Seattle publicly provides comprehensive data on traffic, collisions, streets & thier conditions and more. In a first step we dig into timline patterns in the collision data. Further steps will look into accident hotspots in the city and their development over time.
 
 
 
 
-# **Project steps:**
+# **Project Goal (step 1):**
 
-**1.** Open traffic data from Seattle city is obtained and merged with the traffic volume data of the city by corresponding$
+- Explore accident data provided by the city of Seattle (2004 - 2019)
+- Find time patterns by zooming into the timeline and comparison of time slices over all years
+- Find hot spots by clustering using geospacial coordinates ( → later)
 
-**2.** The traffic volume data is merged with the road network data to get the road features for each road segment.
 
-**3.** Run a linear regression, random forest regressor and gradient boosting regressor models on 2016 traffic accident cou$
+# **Motivation**
+
+- Hot spots may be mitigated by planning/construction actions
+- Commuters can try to avoid the hot spot, as well as the accident peak times
+
+
+# **Data**
+
+- Collisions: https://data-seattlecitygis.opendata.arcgis.com/datasets/5b5c745e0f1f48e7a53acec63a0022ab_0
+
+For later use: 
+- Roads: https://data-seattlecitygis.opendata.arcgis.com/datasets/seattle-streets
+- Traffic flow: https://hub.arcgis.com/datasets/170b764c52f34c9497720c0463f3b58b_9
+
+
+
+# **Project step 1:**
+
+**1.** Get collisions data, and enrich them with specific timeline aggregation info$
+
+**2.** Explore the data, zoom into the timeline and indentify some patterns
+
+**3.** State a hypothesis about the distribution over the weeks in a year, and test it$
+
 
 
