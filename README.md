@@ -2,12 +2,12 @@
 
 ### *Extending a project by Gulom Saidov*
 
-The city of Seattle publicly provides comprehensive data on traffic, collisions, streets & thier conditions and more. In a first step we dig into timline patterns in the collision data. Further steps will look into accident hotspots in the city and their development over time.
+The city of Seattle publicly provides comprehensive data on traffic, collisions and streets & their conditions. In a first step we dig into timline patterns in the collision data. Further steps will look into accident hotspots in the city and their development over time.
 
 
 
 
-# **Project Goal (step 1):**
+# **Project Goal:**
 
 - Explore accident data provided by the city of Seattle (2004 - 2019)
 - Find time patterns by zooming into the timeline and comparison of time slices over all years
