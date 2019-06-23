@@ -30,7 +30,7 @@ For later use:
 
 
 
-# **Project step 1:**
+# **Project step 1: EDA and first hypothesis**
 
 **1.** Get collisions data, and enrich them with specific timeline aggregation info$
 
@@ -40,14 +40,14 @@ For later use:
 
 ![Accidents by week](week_count_2015.png)
 
-# Data pipeline
+## Data pipeline
 - download Collision data into a geoPandas dataframe
 - enrich with data markers (year, week, hour, ... ) by which to group later
 - slice and group to zoom into the timeline, and to get slices over all years
 - visualize
 
 
-# Hypothesis: the week pattern is not random
+## Hypothesis: the week pattern is not random
 - Zero-Hypothesis: the fluctuations of the accidents per week over the year is random. 
 - For simplification, we just look at weeks 31 and 32. 
 - We think  week 31 is always higher in accidents than week 32. 
@@ -62,10 +62,14 @@ We can apply this method to all consecutive week pairs in a year, to find the we
 
 
 
-# Conclusion and next steps
+## Conclusion and next steps
 
 - The Collision data timeline follows some clear patterns, even in a city with little weather variations (no ice/snow)
 - Zooming into a timeline brings pattern to light that are not easy to see on first glance (in this case they were easy to guess by knowing the subject). Also: digging deep into one dataset might get farther than merging.
 Advice to self: don’t get impatient …
 - Let's to continue and find spatial patterns! (steps 2/3)
 
+# Project step 2: Spatial patterns and predictions
+
+- Use clustering to find accident hotspots on the map of Seattle
+- Predict accident frequency in a given week at a given spot
