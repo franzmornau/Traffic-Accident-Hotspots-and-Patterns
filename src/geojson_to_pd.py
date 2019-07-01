@@ -12,7 +12,7 @@ def p1_turn_gj_to_pd(read_path, write_path):
     returns: written row count
     '''
     acc = gpd.read_file(read_path)
-    # some rows don't have location data.We can't use them (by now).
+    # some rows don't have location data. We can't use them (by now).
     lc = acc[acc['geometry'].notnull()].copy()
     
     lc['longitude'] = lc['geometry'].bounds['minx']
