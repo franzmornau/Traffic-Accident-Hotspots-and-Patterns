@@ -4,8 +4,10 @@
 
 The city of Seattle publicly provides comprehensive data on traffic, collisions and streets & their conditions. In a first step we dig into timline patterns in the collision data. Further steps will look into accident hotspots in the city and their development over time.
 
-Slides: https://docs.google.com/presentation/d/1NjCp65iQMG-ukc7dgZkvaqHdR0aIhejo9fQlQUmVcbs/edit#slide=id.g5ad0665c7b_0_60
+Slides for part 1: https://docs.google.com/presentation/d/1NjCp65iQMG-ukc7dgZkvaqHdR0aIhejo9fQlQUmVcbs/edit#slide=id.g5ad0665c7b_0_60
 
+Slides for part 2:
+https://docs.google.com/presentation/d/1b8Dgp7klVpJ_7CYki9sF3RFJ1HyTY9nr9h16wZXV4n8/edit#slide=id.g5ceeb3496d_0_10
 
 # **Project Goal:**
 
@@ -71,5 +73,31 @@ Advice to self: don’t get impatient …
 
 # Project step 2: Spatial patterns and predictions
 
+Plan:
 - Use clustering to find accident hotspots on the map of Seattle
 - Predict accident frequency in a given week at a given spot
+
+## Clustering and patterns
+- k-means did not give much insight:
+
+![5 K-Means clusters](images_part2/K_Means_5_cl.png)
+
+- DBSCAN (density-based clustering) shows the important areas, and with higer density parameters, hotspots and roads
+
+![DBSCAN clusters](images_part2/dbscan_001_5.png)
+- the spatially very dense areas (e.g. junctions / crossings) could be found with heatmaps or even aggregations, but DBSCAN can find also roads. 
+- hotspot classification 
+
+
+
+## predictive analysis
+- The week pattern plus weekday pattern made me guess that a prediction of the number of accidents at a given day should be possible, but by now I did not yet find a good model. Gradient boosting shows, by now, useless results.
+
+
+## Conclusions 
+- Spatial patterns can't be found by one clustering mechanism, but need a step-by step approach to find different classes of hot spots
+- Predictions are harder to obtain than first guessed.   
+
+## Next steps
+- refine the spatial pattern recognition to a step-by-step procedure that could be applied also to other cities
+- further explore the prediction in time and find the right granularity where useful predictions are possible
