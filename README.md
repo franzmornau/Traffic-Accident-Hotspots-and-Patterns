@@ -40,7 +40,7 @@ For later use:
 
 **3.** State a hypothesis about the distribution over the weeks in a year, and test it$
 
-![Accidents by week](week_count_2015.png)
+![Accidents by week](images_part1/week_count_2015.png)
 
 ## Data pipeline
 - download Collision data into a geoPandas dataframe
