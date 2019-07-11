@@ -1,0 +1,9 @@
+- hot spots in different years (over time)
+- predictions
+-- try to predict just for the biggest hot spots
+-- time patterns localized yo e.g. only downtown
+- separate the city map into 10 categories of accident density
+- heatmap / density
+- find the nature of the hot spots (junction, street, what kind of junction)
+
+- divide the city in collision frequency areas?
