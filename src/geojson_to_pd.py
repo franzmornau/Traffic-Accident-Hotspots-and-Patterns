@@ -31,7 +31,9 @@ def p1_turn_gj_to_pd(read_path, write_path):
     df_p['day'] = pd.DataFrame([d.day for d in dts])
     df_p['hour'] = pd.DataFrame([d.hour for d in dts])
     df_p['weekday'] = pd.DataFrame([d.weekday() for d in dts])
-    
+    #and the date in YYYY-MM-DD format (for Prophet)
+    df_p['date'] = df_p.INCDATE.apply(lambda x: x[:10])
+
     df_p.to_csv(write_path)
     print('{} rows where dropped, because they had no location data.'.format((len(acc) - len(df_p))))
     print('The written file has {} rows.'.format(len(df_p)))
