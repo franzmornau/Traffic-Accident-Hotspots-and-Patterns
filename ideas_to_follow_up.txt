@@ -7,3 +7,12 @@
 - find the nature of the hot spots (junction, street, what kind of junction)
 
 - divide the city in collision frequency areas?
+
+for prediction:
+1. try to only predict categories (high, medium, low)
+
+2. for numbers: include the average of nr of accidents for each feature as column
+
+time series, lstm, prophet (library by facebook)
+
+https://towardsdatascience.com/using-lstms-to-forecast-time-series-4ab688386b1f
