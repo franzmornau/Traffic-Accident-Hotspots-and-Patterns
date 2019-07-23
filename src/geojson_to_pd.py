@@ -34,9 +34,9 @@ def p1_turn_gj_to_pd(read_path, write_path):
     df_p['hour'] = pd.DataFrame([d.hour for d in dts])
     df_p['weekday'] = pd.DataFrame([d.weekday() for d in dts])
     # the date in YYYY-MM-DD format (for Prophet)
+    df_p['ds'] = df_p.INCDTTM.apply(lambda x: pd.to_datetime(x))
     df_p['date'] = df_p.INCDATE.apply(lambda x: pd.to_datetime(x).date())
-    acc['time']=acc.ds.apply(lambda x: pd.to_datetime(x).time())
-    df_p['ds']   = df_p.INCDTTM.apply(lambda x: pd.to_datetime(x))
+    df_p['time']=df_p.ds.apply(lambda x: pd.to_datetime(x).time())
     # Washington state and national holidays
     us_wa_holidays = holidays.UnitedStates(state='WA')
     df_p['is_holiday'] = df_p.ds.apply(lambda x: (x in us_wa_holidays)*1)
