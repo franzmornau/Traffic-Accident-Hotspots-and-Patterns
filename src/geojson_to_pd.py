@@ -2,12 +2,14 @@ import pandas as pd
 import numpy as np
 import geopandas as gpd
 from dateutil import parser
+import holidays
 
 def p1_turn_gj_to_pd(read_path, write_path):
     '''
     - read the original geojson file
     - filter out the rows that don't have geometry data (coordinates)
     - store the coordinats as normal pandas df columns
+    - enrich with datetime and holiday info
     - save as cvs
     parameters: path for reading, path for writing
     returns: written row count
@@ -31,8 +33,14 @@ def p1_turn_gj_to_pd(read_path, write_path):
     df_p['day'] = pd.DataFrame([d.day for d in dts])
     df_p['hour'] = pd.DataFrame([d.hour for d in dts])
     df_p['weekday'] = pd.DataFrame([d.weekday() for d in dts])
-    #and the date in YYYY-MM-DD format (for Prophet)
-    df_p['date'] = df_p.INCDATE.apply(lambda x: x[:10])
+    # the date in YYYY-MM-DD format (for Prophet)
+    df_p['date'] = df_p.INCDATE.apply(lambda x: pd.to_datetime(x).date())
+    acc['time']=acc.ds.apply(lambda x: pd.to_datetime(x).time())
+    df_p['ds']   = df_p.INCDTTM.apply(lambda x: pd.to_datetime(x))
+    # Washington state and national holidays
+    us_wa_holidays = holidays.UnitedStates(state='WA')
+    df_p['is_holiday'] = df_p.ds.apply(lambda x: (x in us_wa_holidays)*1)
+    df_p['holiday_name'] = df_p.ds.apply(lambda x: us_wa_holidays.get(x))
 
     df_p.to_csv(write_path)
     print('{} rows where dropped, because they had no location data.'.format((len(acc) - len(df_p))))
