@@ -19,7 +19,7 @@ class Acc_data:
         X = self._original_acc_data
         X = X[X['year'] != 2003]
         # just a band aid for now, should be taken care of when reading: 
-        X.loc['ds']=X.ds.apply(lambda x: pd.to_datetime(x))
+        X['ds']=X.ds.apply(lambda x: pd.to_datetime(x))
         return X[X['SDOT_COLDESC'].notnull()]
 
     def get_coll_data_uncleaned(self):
