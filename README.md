@@ -9,7 +9,7 @@ The city of Seattle publishes data about collisions in its area back to 2004, up
 
 The dataset contains geocoordinates, date and time, accident description (with 20 different values), counts of injuries, involved pedestrians and bicyclists, and weather/light conditions. It turns out the spots with the highest incidence can be identified by simple aggregation (by geocoordinates.) DBSCAN delivers bigger, continuous high-density areas. As expected, the inner city is one big high accident density area. – Interestingly, the hot spots for accidents including bicyclists are different than the hot spots for accidents that only include Motor vehicles. The same holds for pedestrian-related accidents, which form a third, separate, set.
 
-![accident types](images_part1/comparison_mv_ped_cycl.png)
+![accident types](images/images_clustering/comparison_mv_ped_cycl.png)
 
 ## Time patterns and hypothesis
 
@@ -22,9 +22,16 @@ We apply a local Bayesian structural time series model to analyze the data. For 
 
 When we fit this model to our data 2005-2017, the yearly seasonality component clearly captures a pattern on weekly granularity, that resembles what we see in the average week-wise distribution (see picture). The predictions for short time-horizons work well. The prediction over the whole year 2018 is, however, only slightly better than the average of 2017 (our baseline), and the week-pattern for 2018 is not captured. – Interestingly, the model fitting does not find holiday effects, except for Christmas.
 
-![predictive model](images_part2/model_w_history.png)
+![predictive model](images/images_pred_models/model_w_history.png)
 
-We tried also 2 other models: 1. A gradient boost classifier that relied on the week of the year and the holiday schedule, with the goal of classifying the weeks in low/high. -  2. LSTM. – In both cases, the results are not better than random by now.
+We tried also 2 other models: 1. A gradient boost classifier that relied on the week of the year and the holiday schedule, with the goal of classifying the weeks in low/high. -  2. LSTM (time series). – In both cases, our results are not better than random by now.
+
+# Conclusion
+We get a good prediction of the accident numbers per week for about the next 4 weeks. We get a still useful one for 10-20 weeks - meaning, it outperforms the baseline by a significant number. However, the peek weeks, and more general the seasonality of weeks, is not well captured by the model.
+
+Reasons may be 
+- the fundamental randomness of accidents: even with 200000 data points, there is still too much noise
+- insufficient domain knowledge about the local events
 
 ## Future work
 
